@@ -35,12 +35,12 @@ def main(threshold):
     df = pd.read_sql_query(pto_query, conn)
 
     # Step 3: Ensure the output directory exists
-    folder_path = os.path.dirname('../sql_queries/get_workaholics.xlsx')
+    folder_path = os.path.dirname('../sql_queries/get_workaholics.csv')
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
 
     # Step 4: Export the result to an Excel file
-    df.to_excel('../sql_queries/get_workaholics.xlsx', index=False)
+    df.to_csv('../sql_queries/get_workaholics.csv', index=False)
 
     conn.close()
 
