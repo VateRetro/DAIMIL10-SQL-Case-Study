@@ -48,13 +48,13 @@ def main(threshold, count_query):
     df = pd.read_sql_query(pto_query, conn)
 
     # Step 4: Ensure the output directory exists
-    output_file = '../excel_reports/get_workaholics.csv'
+    output_file = '../excel_reports/get_workaholics.xlsx'
     folder_path = os.path.dirname(output_file)
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
 
     # Step 5: Export the result to a CSV file
-    df.to_csv(output_file, index=False)
+    df.to_excel(output_file, index=False)
 
     conn.close()
 
